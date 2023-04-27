@@ -1,12 +1,12 @@
 ﻿Public Class Usuario
     Implements IEquatable(Of Usuario)
 
-    Public Property nombre As String
+    Public Property Nombre As String
     Public Property contraseña As String
     Public Property puntuacion As Integer
 
     Sub New(nombre As String, contraseña As String)
-        Me.nombre = nombre
+        Me.Nombre = nombre
         Me.contraseña = contraseña
     End Sub
 
@@ -16,7 +16,7 @@
 
     Public Overloads Function Equals(other As Usuario) As Boolean Implements IEquatable(Of Usuario).Equals
         Return other IsNot Nothing AndAlso
-               nombre.ToLower = other.nombre.ToLower AndAlso
+               Nombre.ToLower = other.Nombre.ToLower AndAlso
                contraseña = other.contraseña
     End Function
 
