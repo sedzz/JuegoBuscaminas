@@ -33,7 +33,7 @@ Partial Class FrmEleccionDificultad
         Me.btnFacil.Name = "btnFacil"
         Me.btnFacil.Size = New System.Drawing.Size(113, 55)
         Me.btnFacil.TabIndex = 0
-        Me.btnFacil.Text = "facil"
+        Me.btnFacil.Text = "Fácil"
         Me.btnFacil.UseVisualStyleBackColor = True
         '
         'btnMedio
@@ -42,7 +42,7 @@ Partial Class FrmEleccionDificultad
         Me.btnMedio.Name = "btnMedio"
         Me.btnMedio.Size = New System.Drawing.Size(110, 53)
         Me.btnMedio.TabIndex = 1
-        Me.btnMedio.Text = "medio"
+        Me.btnMedio.Text = "Medio"
         Me.btnMedio.UseVisualStyleBackColor = True
         '
         'btnDificil
@@ -51,10 +51,10 @@ Partial Class FrmEleccionDificultad
         Me.btnDificil.Name = "btnDificil"
         Me.btnDificil.Size = New System.Drawing.Size(90, 56)
         Me.btnDificil.TabIndex = 2
-        Me.btnDificil.Text = "dificil"
+        Me.btnDificil.Text = "Difícil"
         Me.btnDificil.UseVisualStyleBackColor = True
         '
-        'Form2
+        'FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -62,7 +62,7 @@ Partial Class FrmEleccionDificultad
         Me.Controls.Add(Me.btnDificil)
         Me.Controls.Add(Me.btnMedio)
         Me.Controls.Add(Me.btnFacil)
-        Me.Name = "Form2"
+        Me.Name = "FrmEleccionDificultad"
         Me.Text = "Form2"
         Me.ResumeLayout(False)
 

@@ -3,15 +3,16 @@
     Public Property PosY As Integer
     Public ReadOnly Property Bombas As Integer
         Get
-            If PosY = 8 Then
+            If PosX = 8 Then
                 Return 10
             End If
-            If PosY = 16 Then
+
+            If PosX = 16 Then
                 Return 40
             End If
-            If PosY = 30 Then
-                Return 99
-            End If
+
+            Return 99
+
         End Get
     End Property
 

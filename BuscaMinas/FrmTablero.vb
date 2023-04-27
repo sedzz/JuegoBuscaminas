@@ -55,7 +55,7 @@
                             End If
                         Next
                     Next
-                    MessageBox.Show("la cagaste")
+                    MessageBox.Show("Has explotado una bomba, volveras al menú")
                     Close()
                     FrmEleccionDificultad.Show()
                 Case 1
@@ -102,7 +102,7 @@
 
     Private Sub MarcarBandera(sender As Object, e As MouseEventArgs)
         Dim boton As Button = TryCast(sender, Button)
-        If boton.BackColor = Color.Black And e.Button = Windows.Forms.MouseButtons.Right Then
+        If boton.BackColor = Color.Black AndAlso e.Button = Windows.Forms.MouseButtons.Right Then
             boton.BackColor = Color.Transparent
             Exit Sub
         End If
