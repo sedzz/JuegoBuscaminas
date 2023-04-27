@@ -34,9 +34,12 @@
 
             Next
             Numeros()
+            BombasGeneradas = True
+            ZonaSegura(boton)
+
         End If
 
-        BombasGeneradas = True
+
         If boton.BackColor <> Color.Black Then
             boton.Enabled = False
 
@@ -145,10 +148,22 @@
                     posicionesDeZonaSegura(posicionParaLaPosicionX) = x & y
                     posicionParaLaPosicionX += 1
                     '  Boton_Click(matriz(x, y), EventArgs.Empty)
-                    matriz(x, y).Text = matriz(x, y).Tag
+                    ' matriz(x, y).Text = matriz(x, y).Tag
                 End If
             Next
         Next
+        If BombasGeneradas Then
+            For x As Integer = posicionX - 1 To posicionX + 1
+                For y As Integer = posicionY - 1 To posicionY + 1
+                    If Not (x = -1 OrElse y = -1) And Not (x = dificultad.PosX OrElse y = dificultad.PosY) Then
+                        matriz(x, y).Text = matriz(x, y).Tag
+                        matriz(x, y).Enabled = False
+
+                    End If
+                Next
+            Next
+        End If
+
 
     End Sub
 
