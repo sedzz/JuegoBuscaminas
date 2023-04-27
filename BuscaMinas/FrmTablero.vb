@@ -178,14 +178,15 @@
                 If j < 10 Then matriz(i, j).Name = $"btn{i}_0{j}"
                 If i < 10 And j < 10 Then matriz(i, j).Name = $"btn0{i}_0{j}"
                 matriz(i, j).Tag = 0
-                matriz(i, j).Size = New Size(50, 30)
+                matriz(i, j).Size = New Size(30, 30)
                 matriz(i, j).Location = New Point(x, y)
+                matriz(i, j).Font = New Font("Cooper", 10, FontStyle.Bold, GraphicsUnit.Point)
                 y += matriz(i, j).Size.Height
                 Controls.Add(matriz(i, j))
                 AddHandler matriz(i, j).Click, AddressOf Boton_Click
                 AddHandler matriz(i, j).MouseDown, AddressOf MarcarBandera
             Next j
-            x += 50
+            x += 30
             y = 0
         Next i
         zonaSeguraCreada = True

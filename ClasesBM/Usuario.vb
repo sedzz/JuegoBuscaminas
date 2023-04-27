@@ -2,12 +2,12 @@
     Implements IEquatable(Of Usuario)
 
     Public Property Nombre As String
-    Public Property contraseña As String
-    Public Property puntuacion As Integer
+    Public Property Contraseña As String
+    Public Property Puntuacion As Integer
 
     Sub New(nombre As String, contraseña As String)
         Me.Nombre = nombre
-        Me.contraseña = contraseña
+        Me.Contraseña = contraseña
     End Sub
 
     Public Overrides Function Equals(obj As Object) As Boolean
@@ -17,7 +17,7 @@
     Public Overloads Function Equals(other As Usuario) As Boolean Implements IEquatable(Of Usuario).Equals
         Return other IsNot Nothing AndAlso
                Nombre.ToLower = other.Nombre.ToLower AndAlso
-               contraseña = other.contraseña
+               Contraseña = other.Contraseña
     End Function
 
     Public Shared Operator =(left As Usuario, right As Usuario) As Boolean

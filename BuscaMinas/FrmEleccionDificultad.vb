@@ -19,4 +19,5 @@ Public Class FrmEleccionDificultad
         FrmTablero.Show()
         Me.Hide()
     End Sub
+
 End Class
