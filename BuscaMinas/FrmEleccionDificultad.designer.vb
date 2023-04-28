@@ -22,14 +22,18 @@ Partial Class FrmEleccionDificultad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnFacil = New System.Windows.Forms.Button()
         Me.btnMedio = New System.Windows.Forms.Button()
         Me.btnDificil = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.btnRegistro = New System.Windows.Forms.Button()
+        Me.btnConectarse = New System.Windows.Forms.Button()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtJugadorActual = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnFacil
@@ -59,61 +63,80 @@ Partial Class FrmEleccionDificultad
         Me.btnDificil.Text = "Difícil"
         Me.btnDificil.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnRegistro
         '
-        Me.Button1.Location = New System.Drawing.Point(661, 400)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(91, 32)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Registrarse"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRegistro.Location = New System.Drawing.Point(661, 400)
+        Me.btnRegistro.Name = "btnRegistro"
+        Me.btnRegistro.Size = New System.Drawing.Size(100, 32)
+        Me.btnRegistro.TabIndex = 3
+        Me.btnRegistro.Text = "Registrarse"
+        Me.btnRegistro.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnConectarse
         '
-        Me.Button2.Location = New System.Drawing.Point(661, 366)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 28)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Conectarse"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnConectarse.Location = New System.Drawing.Point(661, 366)
+        Me.btnConectarse.Name = "btnConectarse"
+        Me.btnConectarse.Size = New System.Drawing.Size(100, 28)
+        Me.btnConectarse.TabIndex = 4
+        Me.btnConectarse.Text = "Conectarse"
+        Me.btnConectarse.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtUsuario
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(638, 268)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 27)
-        Me.TextBox1.TabIndex = 5
-        Me.TextBox1.Text = "usuario"
+        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(638, 268)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(150, 27)
+        Me.txtUsuario.TabIndex = 5
+        Me.txtUsuario.Text = "usuario"
         '
-        'TextBox2
+        'txtContraseña
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(638, 324)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(150, 27)
-        Me.TextBox2.TabIndex = 6
-        Me.TextBox2.Text = "contraseña"
+        Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Location = New System.Drawing.Point(638, 324)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(150, 27)
+        Me.txtContraseña.TabIndex = 6
+        Me.txtContraseña.Text = "contraseña"
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(213, 56)
+        Me.Label1.Location = New System.Drawing.Point(213, 178)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(364, 56)
+        Me.Label1.Size = New System.Drawing.Size(352, 56)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "BUSCAMINAS"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 16)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Jugador : "
+        '
+        'txtJugadorActual
+        '
+        Me.txtJugadorActual.Location = New System.Drawing.Point(84, 17)
+        Me.txtJugadorActual.Name = "txtJugadorActual"
+        Me.txtJugadorActual.Size = New System.Drawing.Size(67, 22)
+        Me.txtJugadorActual.TabIndex = 9
+        Me.txtJugadorActual.Text = "anonimo"
         '
         'FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txtJugadorActual)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtContraseña)
+        Me.Controls.Add(Me.txtUsuario)
+        Me.Controls.Add(Me.btnConectarse)
+        Me.Controls.Add(Me.btnRegistro)
         Me.Controls.Add(Me.btnDificil)
         Me.Controls.Add(Me.btnMedio)
         Me.Controls.Add(Me.btnFacil)
@@ -127,9 +150,12 @@ Partial Class FrmEleccionDificultad
     Friend WithEvents btnFacil As Button
     Friend WithEvents btnMedio As Button
     Friend WithEvents btnDificil As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents btnRegistro As Button
+    Friend WithEvents btnConectarse As Button
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents txtContraseña As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents txtJugadorActual As TextBox
 End Class

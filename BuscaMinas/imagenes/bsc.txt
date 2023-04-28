@@ -1,5 +1,5 @@
-﻿Public Class FrmTablero
-    Public matriz(dificultad.AnchoX - 1, dificultad.LargoY - 1) As Button
+Public Class FrmTablero
+    Public matriz(dificultad.TamanoX - 1, dificultad.TamanoY - 1) As Button
     Private posicionDeBombas(dificultad.Bombas - 1) As String
     Private posicionesDeZonaSegura(9) As String
     Dim x As Integer = 0
@@ -28,8 +28,8 @@
             Dim contBombas As Integer = 0
             Do
 
-                posicionX = rnd.Next(dificultad.AnchoX)
-                posicionY = rnd.Next(dificultad.LargoY)
+                posicionX = rnd.Next(dificultad.TamanoX)
+                posicionY = rnd.Next(dificultad.TamanoY)
                 If Not posicionDeBombas.Contains(posicionX & posicionY) AndAlso Not posicionesDeZonaSegura.Contains(posicionX & posicionY) AndAlso Not $"btn{posicionX}_{posicionY}".Equals(boton.Name) Then
                     totalBombas.Add(matriz(posicionX, posicionY))
                     posicionDeBombas(contBombas) = posicionX & posicionY
@@ -58,8 +58,8 @@
                     Dim Image As Image = Image.FromFile(imagePath)
                     boton.Image = Image
 
-                    For i = 0 To dificultad.AnchoX - 1
-                        For j = 0 To dificultad.LargoY - 1
+                    For i = 0 To dificultad.TamanoX - 1
+                        For j = 0 To dificultad.TamanoY - 1
                             If matriz(i, j).Tag = -1 Then
                                 matriz(i, j).Image = Image
                             End If
@@ -95,7 +95,7 @@
         For Each bom In totalBombas
             For xP = SacarPosicion(bom, "X") - 1 To SacarPosicion(bom, "X") + 1
                 For yP = SacarPosicion(bom, "") - 1 To SacarPosicion(bom, "") + 1
-                    If Not (xP = -1 OrElse yP = -1) AndAlso Not (xP = dificultad.AnchoX OrElse yP = dificultad.LargoY) Then
+                    If Not (xP = -1 OrElse yP = -1) AndAlso Not (xP = dificultad.TamanoX OrElse yP = dificultad.TamanoY) Then
                         If matriz(xP, yP).Tag <> -1 Then
                             matriz(xP, yP).Tag += 1
 
@@ -152,7 +152,7 @@
         posicionParaLaPosicionX = 0
         For x As Integer = posicionX - 1 To posicionX + 1
             For y As Integer = posicionY - 1 To posicionY + 1
-                If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
+                If Not (x = -1 OrElse y = -1) And Not (x = dificultad.TamanoX OrElse y = dificultad.TamanoY) Then
                     'matriz(x, y).Enabled = False
 
 
@@ -166,7 +166,7 @@
         If BombasGeneradas Then
             For x As Integer = posicionX - 1 To posicionX + 1
                 For y As Integer = posicionY - 1 To posicionY + 1
-                    If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
+                    If Not (x = -1 OrElse y = -1) And Not (x = dificultad.TamanoX OrElse y = dificultad.TamanoY) Then
                         matriz(x, y).Text = matriz(x, y).Tag
                         matriz(x, y).Enabled = False
 
@@ -179,9 +179,9 @@
     End Sub
 
     Sub CrearTablero()
-        For i = 0 To dificultad.AnchoX - 1 'Recorre las filas
+        For i = 0 To dificultad.TamanoX - 1 'Recorre las filas
 
-            For j = 0 To dificultad.LargoY - 1 'Recorre las columnas
+            For j = 0 To dificultad.TamanoY - 1 'Recorre las columnas
                 Dim btn As New Button
                 matriz(i, j) = btn
                 If i >= 10 And j >= 10 Then matriz(i, j).Name = $"btn{i}_{j}"
@@ -205,7 +205,7 @@
 
     Private Sub tm1_Tick(sender As Object, e As EventArgs) Handles tm1.Tick
         tiempoTranscurrido += 1
-        lblTimer.Text = (tiempoTranscurrido).ToString("D2")
+        txtTimer.Text = (tiempoTranscurrido Mod 60).ToString("D2")
 
     End Sub
 End Class

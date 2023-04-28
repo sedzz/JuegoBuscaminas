@@ -9,10 +9,6 @@ Public Class Usuarios
 
     Public Function AñadirUsuario(nombre As String, contraseña As String) As Boolean
         Dim ruta As String = "../../"
-
-
-
-
         Dim usuario As New Usuario(nombre, contraseña)
         Dim posicionUsuario = UsuariosTotales.IndexOf(usuario)
         If posicionUsuario = -1 Then
