@@ -11,6 +11,7 @@
 
 
     Private Sub Form1_Show(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = Color.AliceBlue
         CrearTablero()
         tm1.Start()
     End Sub
@@ -191,6 +192,7 @@
                 matriz(i, j).Tag = 0
                 matriz(i, j).Size = New Size(30, 30)
                 matriz(i, j).Location = New Point(x, y)
+                matriz(i, j).BackColor = Color.LightGray
                 matriz(i, j).Font = New Font("Cooper", 10, FontStyle.Bold, GraphicsUnit.Point)
                 y += matriz(i, j).Size.Height
                 Controls.Add(matriz(i, j))
