@@ -22,7 +22,6 @@ Partial Class FrmEleccionDificultad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.btnFacil = New System.Windows.Forms.Button()
         Me.btnMedio = New System.Windows.Forms.Button()
         Me.btnDificil = New System.Windows.Forms.Button()
@@ -32,7 +31,6 @@ Partial Class FrmEleccionDificultad
         Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtJugadorActual = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
@@ -88,7 +86,7 @@ Partial Class FrmEleccionDificultad
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(150, 27)
         Me.txtUsuario.TabIndex = 5
-        Me.txtUsuario.Text = "usuario"
+        Me.txtUsuario.Text = "Usuario"
         '
         'txtContraseña
         '
@@ -97,7 +95,7 @@ Partial Class FrmEleccionDificultad
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(150, 27)
         Me.txtContraseña.TabIndex = 6
-        Me.txtContraseña.Text = "contraseña"
+        Me.txtContraseña.Text = "Contraseña"
         '
         'Label1
         '
@@ -123,7 +121,7 @@ Partial Class FrmEleccionDificultad
         Me.txtJugadorActual.Name = "txtJugadorActual"
         Me.txtJugadorActual.Size = New System.Drawing.Size(67, 22)
         Me.txtJugadorActual.TabIndex = 9
-        Me.txtJugadorActual.Text = "anonimo"
+        Me.txtJugadorActual.Text = "Anónimo"
         '
         'FrmEleccionDificultad
         '
@@ -156,6 +154,5 @@ Partial Class FrmEleccionDificultad
     Friend WithEvents txtContraseña As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents txtJugadorActual As TextBox
 End Class

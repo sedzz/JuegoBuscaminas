@@ -23,7 +23,7 @@ Public Class FrmEleccionDificultad
     End Sub
 
     Private Sub btnConectarse_Click(sender As Object, e As EventArgs) Handles btnConectarse.Click
-        ruta.WriteLine(txtUsuario.Text & "," & txtContraseña.Text)
+        ruta.WriteLine(txtUsuario.Text & "," & txtContraseña.Text & vbCrLf)
         ruta.Close()
     End Sub
 End Class

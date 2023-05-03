@@ -29,14 +29,14 @@ Partial Class FrmTablero
         '
         'tm1
         '
-        Me.tm1.Interval = 10
+        Me.tm1.Interval = 150
         '
         'lblTimer
         '
         Me.lblTimer.AutoSize = True
         Me.lblTimer.BackColor = System.Drawing.SystemColors.GrayText
         Me.lblTimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTimer.Location = New System.Drawing.Point(917, 34)
+        Me.lblTimer.Location = New System.Drawing.Point(258, 9)
         Me.lblTimer.Name = "lblTimer"
         Me.lblTimer.Size = New System.Drawing.Size(27, 29)
         Me.lblTimer.TabIndex = 0
@@ -46,9 +46,11 @@ Partial Class FrmTablero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.lblTimer)
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "FrmTablero"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

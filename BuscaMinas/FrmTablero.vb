@@ -2,16 +2,29 @@
     Public matriz(dificultad.AnchoX - 1, dificultad.LargoY - 1) As Button
     Private posicionDeBombas(dificultad.Bombas - 1) As String
     Private posicionesDeZonaSegura(9) As String
-    Dim x As Integer = 0
-    Dim y As Integer = 0
+    Dim x As Integer = 25
+    Dim y As Integer = 50
     Private BombasGeneradas As Boolean = False
     Dim totalBombas As List(Of Button) = New List(Of Button)
     Dim zonaSeguraCreada As Boolean = False
-    Dim tiempoTranscurrido As Integer = 0
+    Dim tiempoTranscurrido As Integer = 1000
 
 
     Private Sub Form1_Show(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.BackColor = Color.AliceBlue
+
+        Select Case dificultad.Bombas
+
+            Case 10
+                Me.Width = 307
+                Me.Height = 400
+
+            Case 40
+                Me.Width = 550
+                Me.Height = 600
+            Case Else
+                Me.Width = 970
+                Me.Height = 600
+        End Select
         CrearTablero()
         tm1.Start()
     End Sub
@@ -21,34 +34,34 @@
         Dim rnd As New Random
         Dim posicionX, posicionY As Integer
 
-        If TypeOf boton Is Button And BombasGeneradas = False Then
-            BombasGeneradas = True
-
-            ZonaSegura(boton)
-            'For i = 0 To dificultad.Bombas - 1
-            Dim contBombas As Integer = 0
-            Do
-
-                posicionX = rnd.Next(dificultad.AnchoX)
-                posicionY = rnd.Next(dificultad.LargoY)
-                If Not posicionDeBombas.Contains(posicionX & posicionY) AndAlso Not posicionesDeZonaSegura.Contains(posicionX & posicionY) AndAlso Not $"btn{posicionX}_{posicionY}".Equals(boton.Name) Then
-                    totalBombas.Add(matriz(posicionX, posicionY))
-                    posicionDeBombas(contBombas) = posicionX & posicionY
-                    matriz(posicionX, posicionY).Tag = -1
-                    contBombas += 1
-
-                End If
-            Loop Until dificultad.Bombas = contBombas
-
-
-            Numeros()
-
-            ZonaSegura(boton)
-
-        End If
-
-
         If boton.BackColor <> Color.Black Then
+            If TypeOf boton Is Button And BombasGeneradas = False Then
+                BombasGeneradas = True
+
+                ZonaSegura(boton)
+                'For i = 0 To dificultad.Bombas - 1
+                Dim contBombas As Integer = 0
+                Do
+
+                    posicionX = rnd.Next(dificultad.AnchoX)
+                    posicionY = rnd.Next(dificultad.LargoY)
+                    If Not posicionDeBombas.Contains(posicionX & posicionY) AndAlso Not posicionesDeZonaSegura.Contains(posicionX & posicionY) AndAlso Not $"btn{posicionX}_{posicionY}".Equals(boton.Name) Then
+                        totalBombas.Add(matriz(posicionX, posicionY))
+                        posicionDeBombas(contBombas) = posicionX & posicionY
+                        matriz(posicionX, posicionY).Tag = -1
+                        contBombas += 1
+
+                    End If
+                Loop Until dificultad.Bombas = contBombas
+
+
+                Numeros()
+
+                ZonaSegura(boton)
+
+            End If
+
+
             boton.Enabled = False
 
 
@@ -72,19 +85,19 @@
                     FrmEleccionDificultad.Show()
                 Case 1
                     boton.BackColor = Color.Blue
+                    tiempoTranscurrido += 10
                 Case 2
                     boton.BackColor = Color.Green
+                    tiempoTranscurrido += 20
                 Case 3
                     boton.BackColor = Color.Red
+                    tiempoTranscurrido += 30
                 Case 4
                     boton.BackColor = Color.DarkBlue
+                    tiempoTranscurrido += 40
             End Select
-        Else
-            boton.Text = ""
+            boton.Text = boton.Tag
         End If
-        boton.Text = boton.Tag
-
-
     End Sub
 
     Function SacarPosicion(boton As Button, quieresX As String) As Integer
@@ -117,7 +130,7 @@
         If boton.BackColor = Color.Black AndAlso e.Button = Windows.Forms.MouseButtons.Right Then
 
 
-            boton.BackColor = Nothing
+            boton.BackColor = Color.WhiteSmoke
 
             Exit Sub
         End If
@@ -192,7 +205,7 @@
                 matriz(i, j).Tag = 0
                 matriz(i, j).Size = New Size(30, 30)
                 matriz(i, j).Location = New Point(x, y)
-                matriz(i, j).BackColor = Color.LightGray
+                matriz(i, j).BackColor = Color.WhiteSmoke
                 matriz(i, j).Font = New Font("Cooper", 10, FontStyle.Bold, GraphicsUnit.Point)
                 y += matriz(i, j).Size.Height
                 Controls.Add(matriz(i, j))
@@ -200,13 +213,13 @@
                 AddHandler matriz(i, j).MouseDown, AddressOf MarcarBandera
             Next j
             x += 30
-            y = 0
+            y = 50
         Next i
         zonaSeguraCreada = True
     End Sub
 
     Private Sub tm1_Tick(sender As Object, e As EventArgs) Handles tm1.Tick
-        tiempoTranscurrido += 1
+        tiempoTranscurrido -= 1
         lblTimer.Text = (tiempoTranscurrido).ToString("D2")
 
     End Sub
