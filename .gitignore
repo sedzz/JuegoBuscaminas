@@ -16,8 +16,6 @@
 # Mono auto generated files
 mono_crash.*
 
-./buscaminas/*
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
