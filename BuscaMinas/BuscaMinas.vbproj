@@ -79,6 +79,12 @@
     <Compile Include="FrmEleccionDificultad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmLoginRegistro.Designer.vb">
+      <DependentUpon>FrmLoginRegistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoginRegistro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmTablero.designer.vb">
       <DependentUpon>FrmTablero.vb</DependentUpon>
     </Compile>
@@ -106,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmEleccionDificultad.resx">
       <DependentUpon>FrmEleccionDificultad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoginRegistro.resx">
+      <DependentUpon>FrmLoginRegistro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTablero.resx">
       <DependentUpon>FrmTablero.vb</DependentUpon>

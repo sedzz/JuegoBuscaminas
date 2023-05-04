@@ -68,6 +68,11 @@
 
             boton.Enabled = False
 
+            If Terminar() = True Then
+                MessageBox.Show("Has ganado felicidades, volveras al menú")
+                Close()
+                FrmEleccionDificultad.Show()
+            End If
 
 
             Select Case boton.Tag
@@ -136,6 +141,24 @@
         Next
 
     End Sub
+    Function Terminar() As Boolean
+        Dim contadorHabilitados As Integer = 0
+        Dim btn As New Button
+        For i = 0 To dificultad.AnchoX - 1 'Recorre las filas
+
+            For j = 0 To dificultad.LargoY - 1 'Recorre las columnas
+                btn = matriz(i, j)
+                If btn.Enabled = True Then
+                    contadorHabilitados += 1
+                End If
+            Next
+        Next
+        If contadorHabilitados = dificultad.Bombas Then
+            Return True
+        End If
+        ' contadorHabilitados = 0
+        Return False
+    End Function
 
 
     Private Sub MarcarBandera(sender As Object, e As MouseEventArgs)

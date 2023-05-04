@@ -16,8 +16,7 @@
 
     Public Overloads Function Equals(other As Usuario) As Boolean Implements IEquatable(Of Usuario).Equals
         Return other IsNot Nothing AndAlso
-               Nombre.ToLower = other.Nombre.ToLower AndAlso
-               Contraseña = other.Contraseña
+               Nombre.ToLower = other.Nombre.ToLower
     End Function
 
     Public Shared Operator =(left As Usuario, right As Usuario) As Boolean

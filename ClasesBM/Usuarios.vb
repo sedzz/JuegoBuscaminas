@@ -1,32 +1,35 @@
 ﻿Imports System.IO
 
 Public Class Usuarios
-    Public Property UsuariosTotales As List(Of Usuario)
+    Dim ruta As String = "../../usuarios.txt"
+    Public Property UsuariosTotales As String()
 
     Sub New()
-        Me.UsuariosTotales = New List(Of Usuario)
+        Me.UsuariosTotales = File.ReadAllLines(ruta)
     End Sub
 
     Public Function AñadirUsuario(nombre As String, contraseña As String) As Boolean
-        Dim ruta As String = "../../"
-        Dim usuario As New Usuario(nombre, contraseña)
-        Dim posicionUsuario = UsuariosTotales.IndexOf(usuario)
-        If posicionUsuario = -1 Then
-            UsuariosTotales.Add(usuario)
-            Return True
-        End If
-        Return False
+        For Each linea In UsuariosTotales
+            If linea.StartsWith(nombre) Then
+                Return False
+            End If
+        Next
+        Array.Resize(UsuariosTotales, UsuariosTotales.Length + 1)
+        UsuariosTotales(UsuariosTotales.Length - 1) = $"{nombre}-{contraseña}"
+        File.WriteAllLines(ruta, UsuariosTotales)
+        Return True
     End Function
 
     Public Function ConectarUsuario(nombre As String, contraseña As String) As Boolean
-        Dim usuario As New Usuario(nombre, contraseña)
-        Dim posicionUsuario = UsuariosTotales.IndexOf(usuario)
-        If posicionUsuario <> -1 Then
-            If usuario.Equals(UsuariosTotales(posicionUsuario)) Then
-                Return True
-            End If
-        End If
-        Return False
 
+        For Each linea In UsuariosTotales
+            If linea.StartsWith(nombre) Then
+                Dim arrayLinea() As String = linea.Split("-")
+                If arrayLinea(1) = contraseña Then
+                    Return True
+                End If
+            End If
+        Next
+        Return False
     End Function
 End Class

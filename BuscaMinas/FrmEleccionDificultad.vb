@@ -1,5 +1,4 @@
 ﻿Imports ClasesBM
-Imports System.IO
 
 Public Class FrmEleccionDificultad
 
@@ -20,18 +19,6 @@ Public Class FrmEleccionDificultad
         FrmTablero.Activate()
         FrmTablero.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub btnConectarse_Click(sender As Object, e As EventArgs) Handles btnConectarse.Click
-        Dim ruta As New StreamWriter("..\..\usuarios.txt")
-        ' Dim booleanoRuta As Boolean = False
-        ' If booleanoRuta = True Then
-        'for
-        ruta.WriteLine(ruta.ToString & txtUsuario.Text & "," & txtContraseña.Text)
-        ' End If
-
-        ruta.Close()
-        ' booleanoRuta = True
     End Sub
 
     Private Sub FrmEleccionDificultad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
