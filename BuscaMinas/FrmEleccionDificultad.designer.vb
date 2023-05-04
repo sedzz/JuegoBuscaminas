@@ -127,7 +127,8 @@ Partial Class FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(794, 434)
         Me.Controls.Add(Me.txtJugadorActual)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -138,6 +139,7 @@ Partial Class FrmEleccionDificultad
         Me.Controls.Add(Me.btnDificil)
         Me.Controls.Add(Me.btnMedio)
         Me.Controls.Add(Me.btnFacil)
+        Me.MaximizeBox = False
         Me.Name = "FrmEleccionDificultad"
         Me.Text = "Form2"
         Me.ResumeLayout(False)

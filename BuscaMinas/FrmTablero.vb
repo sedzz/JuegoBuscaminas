@@ -28,17 +28,22 @@
         CrearTablero()
         tm1.Start()
     End Sub
+
+    Private Sub Form1_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
+        FrmEleccionDificultad.Show()
+    End Sub
+
+
     Private Sub Boton_Click(sender As Object, e As EventArgs)
 
         Dim boton As Button = TryCast(sender, Button)
         Dim rnd As New Random
         Dim posicionX, posicionY As Integer
 
-        If boton.BackColor <> Color.Black Then
+        If boton.BackColor <> Color.White Then
             If TypeOf boton Is Button And BombasGeneradas = False Then
-                BombasGeneradas = True
-
                 ZonaSegura(boton)
+                BombasGeneradas = True
                 'For i = 0 To dificultad.Bombas - 1
                 Dim contBombas As Integer = 0
                 Do
@@ -68,7 +73,7 @@
 
             Select Case boton.Tag
                 Case -1
-                    Dim imagePath As String = "../../imagenes/bus.png" ' todo María: Esto queda pendiente, ya os contaré más tarde donde deben ir las imágenes....
+                    Dim imagePath As String = "../../imagenes/bomba.png" ' todo María: Esto queda pendiente, ya os contaré más tarde donde deben ir las imágenes....
                     Dim Image As Image = Image.FromFile(imagePath)
                     boton.Image = Image
 
@@ -95,6 +100,18 @@
                 Case 4
                     boton.BackColor = Color.DarkBlue
                     tiempoTranscurrido += 40
+                Case 5
+                    boton.BackColor = Color.DarkRed
+                    tiempoTranscurrido += 40
+                Case 6
+                    boton.BackColor = Color.Yellow
+                    tiempoTranscurrido += 40
+                Case 7
+                    boton.BackColor = Color.Cyan
+                    tiempoTranscurrido += 40
+                Case 8
+                    boton.BackColor = Color.DarkCyan
+                    tiempoTranscurrido += 40
             End Select
             boton.Text = boton.Tag
         End If
@@ -112,10 +129,7 @@
                     If Not (xP = -1 OrElse yP = -1) AndAlso Not (xP = dificultad.AnchoX OrElse yP = dificultad.LargoY) Then
                         If matriz(xP, yP).Tag <> -1 Then
                             matriz(xP, yP).Tag += 1
-
-
                         End If
-                        ' matriz(xP, yP).Text = matriz(xP, yP).Tag
                     End If
                 Next
 
@@ -127,16 +141,20 @@
 
     Private Sub MarcarBandera(sender As Object, e As MouseEventArgs)
         Dim boton As Button = TryCast(sender, Button)
-        If boton.BackColor = Color.Black AndAlso e.Button = Windows.Forms.MouseButtons.Right Then
+        If boton.BackColor = Color.White AndAlso e.Button = Windows.Forms.MouseButtons.Right Then
 
 
             boton.BackColor = Color.WhiteSmoke
-
+            boton.Image = Nothing
+            lblNumeroBombas.Text -= 1
             Exit Sub
         End If
 
         If e.Button = Windows.Forms.MouseButtons.Right AndAlso zonaSeguraCreada Then
-            boton.BackColor = Color.Black
+            Dim imageBandera As Image = Image.FromFile("../../imagenes/bandera.png")
+            boton.Image = imageBandera
+            boton.BackColor = Color.White
+            lblNumeroBombas.Text += 1
         End If
 
 
@@ -162,28 +180,45 @@
 
         Loop
 
-
         posicionParaLaPosicionX = 0
-        For x As Integer = posicionX - 1 To posicionX + 1
-            For y As Integer = posicionY - 1 To posicionY + 1
-                If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
-                    'matriz(x, y).Enabled = False
 
-
-                    posicionesDeZonaSegura(posicionParaLaPosicionX) = x & y
-                    posicionParaLaPosicionX += 1
-                    '  Boton_Click(matriz(x, y), EventArgs.Empty)
-                    ' matriz(x, y).Text = matriz(x, y).Tag
-                End If
-            Next
-        Next
         If BombasGeneradas Then
             For x As Integer = posicionX - 1 To posicionX + 1
                 For y As Integer = posicionY - 1 To posicionY + 1
                     If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
                         matriz(x, y).Text = matriz(x, y).Tag
+                        Select Case matriz(x, y).Tag
+                            Case 1
+                                matriz(x, y).BackColor = Color.Blue
+                            Case 2
+                                matriz(x, y).BackColor = Color.Green
+                            Case 3
+                                matriz(x, y).BackColor = Color.Red
+                            Case 4
+                                matriz(x, y).BackColor = Color.DarkBlue
+                            Case 5
+                                matriz(x, y).BackColor = Color.DarkRed
+                            Case 6
+                                matriz(x, y).BackColor = Color.Yellow
+                            Case 7
+                                matriz(x, y).BackColor = Color.Cyan
+                            Case 8
+                                matriz(x, y).BackColor = Color.DarkCyan
+                        End Select
                         matriz(x, y).Enabled = False
+                    End If
+                Next
+            Next
+        Else
+            For x As Integer = posicionX - 1 To posicionX + 1
+                For y As Integer = posicionY - 1 To posicionY + 1
+                    If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
+                        'matriz(x, y).Enabled = False
 
+                        posicionesDeZonaSegura(posicionParaLaPosicionX) = x & y
+                        posicionParaLaPosicionX += 1
+                        '  Boton_Click(matriz(x, y), EventArgs.Empty)
+                        ' matriz(x, y).Text = matriz(x, y).Tag
                     End If
                 Next
             Next
@@ -221,6 +256,12 @@
     Private Sub tm1_Tick(sender As Object, e As EventArgs) Handles tm1.Tick
         tiempoTranscurrido -= 1
         lblTimer.Text = (tiempoTranscurrido).ToString("D2")
+        If tiempoTranscurrido = 0 Then
+            tm1.Stop()
+            MessageBox.Show("Se acabo el tiempo :(, volveras al menú")
+            Close()
+            FrmEleccionDificultad.Show()
+        End If
 
     End Sub
 End Class
