@@ -9,7 +9,6 @@
     Dim zonaSeguraCreada As Boolean = False
     Dim tiempoTranscurrido As Integer = 1000
 
-
     Private Sub Form1_Show(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Select Case dificultad.Bombas
@@ -102,7 +101,7 @@
                     tiempoTranscurrido += 40
                 Case 5
                     boton.BackColor = Color.DarkRed
-                    tiempoTranscurrido += 40
+                    tiempoTranscurrido += 50
                 Case 6
                     boton.BackColor = Color.Yellow
                     tiempoTranscurrido += 40
