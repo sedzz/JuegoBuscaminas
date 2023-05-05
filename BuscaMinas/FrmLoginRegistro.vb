@@ -3,12 +3,12 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 Imports ClasesBM
 
 Public Class FrmLoginRegistro
-    Dim lineas() As String = File.ReadAllLines("../../usuarios.txt")
+    Dim lineas() As String = File.ReadAllLines("./Recursos/Ficheros/usuarios.txt")
     Dim imagenRuta As String = ""
     Dim usuarios As New Usuarios
     Dim ojoAbierto As Boolean = False
     Private Sub FrmLoginRegistro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        imagenRuta = "../../imagenes/ojoCerrado.png"
+        imagenRuta = "./Recursos/Imagenes/ojoCerrado.png"
         Dim Image As Image = Image.FromFile(imagenRuta)
         btnVerContraseña.Image = Image
     End Sub
@@ -39,11 +39,11 @@ Public Class FrmLoginRegistro
 
     Private Sub btnVerContraseña_Click(sender As Object, e As EventArgs) Handles btnVerContraseña.Click
         If ojoAbierto = True Then
-            imagenRuta = "../../imagenes/ojoCerrado.png"
+            imagenRuta = "./Recursos/Imagenes/ojoCerrado.png"
             ojoAbierto = False
             txtContraseña.UseSystemPasswordChar = True
         Else
-            imagenRuta = "../../imagenes/ojoAbierto.png"
+            imagenRuta = "./Recursos/Imagenes/ojoAbierto.png"
             ojoAbierto = True
             txtContraseña.UseSystemPasswordChar = False
         End If

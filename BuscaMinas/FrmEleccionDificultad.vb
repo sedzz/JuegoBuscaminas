@@ -22,9 +22,10 @@ Public Class FrmEleccionDificultad
     End Sub
 
     Private Sub FrmEleccionDificultad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim imagenFondo As Image = Image.FromFile("../../imagenes/fotoFondo.png")
+        Dim imagenFondo As Image = Image.FromFile("./Recursos/Imagenes/fotoFondo.png")
         BackgroundImage = imagenFondo
         Width = 620
         Height = 400
+        txtJugadorActual.Text = FrmLoginRegistro.txtUsuario.Text
     End Sub
 End Class

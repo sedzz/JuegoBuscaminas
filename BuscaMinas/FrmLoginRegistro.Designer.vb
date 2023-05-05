@@ -27,6 +27,7 @@ Partial Class FrmLoginRegistro
         Me.btnConectarse = New System.Windows.Forms.Button()
         Me.btnRegistro = New System.Windows.Forms.Button()
         Me.btnVerContraseña = New System.Windows.Forms.Button()
+        Me.lblGuion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtContraseña
@@ -73,11 +74,21 @@ Partial Class FrmLoginRegistro
         Me.btnVerContraseña.TabIndex = 11
         Me.btnVerContraseña.UseVisualStyleBackColor = True
         '
+        'lblGuion
+        '
+        Me.lblGuion.Enabled = False
+        Me.lblGuion.Location = New System.Drawing.Point(472, 151)
+        Me.lblGuion.Name = "lblGuion"
+        Me.lblGuion.Size = New System.Drawing.Size(178, 27)
+        Me.lblGuion.TabIndex = 12
+        Me.lblGuion.Text = "El nombre no puede incluir '-'"
+        '
         'FrmLoginRegistro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblGuion)
         Me.Controls.Add(Me.btnVerContraseña)
         Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtUsuario)
@@ -95,4 +106,5 @@ Partial Class FrmLoginRegistro
     Friend WithEvents btnConectarse As Button
     Friend WithEvents btnRegistro As Button
     Friend WithEvents btnVerContraseña As Button
+    Friend WithEvents lblGuion As Label
 End Class

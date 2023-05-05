@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Usuarios
-    Dim ruta As String = "../../usuarios.txt"
+    Dim ruta As String = "./Recursos/Ficheros/usuarios.txt"
     Public Property UsuariosTotales As String()
 
     Sub New()
@@ -14,6 +14,9 @@ Public Class Usuarios
                 Return False
             End If
         Next
+        If nombre.Contains("-") OrElse contraseña.Contains("-") Then
+            Return False
+        End If
         Array.Resize(UsuariosTotales, UsuariosTotales.Length + 1)
         UsuariosTotales(UsuariosTotales.Length - 1) = $"{nombre}-{contraseña}"
         File.WriteAllLines(ruta, UsuariosTotales)

@@ -77,7 +77,7 @@
 
             Select Case boton.Tag
                 Case -1
-                    Dim imagePath As String = "../../imagenes/bomba.png" ' todo María: Esto queda pendiente, ya os contaré más tarde donde deben ir las imágenes....
+                    Dim imagePath As String = "./Recursos/Imagenes/bomba.png" ' todo María: Esto queda pendiente, ya os contaré más tarde donde deben ir las imágenes....
                     Dim Image As Image = Image.FromFile(imagePath)
                     boton.Image = Image
 
@@ -173,7 +173,7 @@
         End If
 
         If e.Button = Windows.Forms.MouseButtons.Right AndAlso zonaSeguraCreada Then
-            Dim imageBandera As Image = Image.FromFile("../../imagenes/bandera.png")
+            Dim imageBandera As Image = Image.FromFile("./Recursos/Imagenes/bandera.png")
             boton.Image = imageBandera
             boton.BackColor = Color.White
             lblNumeroBombas.Text += 1
