@@ -18,7 +18,7 @@ Public Class Usuarios
             Return False
         End If
         Array.Resize(UsuariosTotales, UsuariosTotales.Length + 1)
-        UsuariosTotales(UsuariosTotales.Length - 1) = $"{nombre}-{contraseña}"
+        UsuariosTotales(UsuariosTotales.Length - 1) = $"{nombre}-{contraseña}-0"
         File.WriteAllLines(ruta, UsuariosTotales)
         Return True
     End Function

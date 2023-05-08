@@ -1,4 +1,7 @@
-﻿Public Class FrmTablero
+﻿Imports System.IO
+Imports ClasesBM
+
+Public Class FrmTablero
     Public matriz(dificultad.AnchoX - 1, dificultad.LargoY - 1) As Button
     Private posicionDeBombas(dificultad.Bombas - 1) As String
     Private posicionesDeZonaSegura(9) As String
@@ -8,6 +11,7 @@
     Dim totalBombas As List(Of Button) = New List(Of Button)
     Dim zonaSeguraCreada As Boolean = False
     Dim tiempoTranscurrido As Integer = 1000
+    Dim ruta = "./Recursos/Ficheros/usuarios.txt"
 
     Private Sub Form1_Show(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -38,6 +42,12 @@
         Dim boton As Button = TryCast(sender, Button)
         Dim rnd As New Random
         Dim posicionX, posicionY As Integer
+
+        For i = 0 To dificultad.AnchoX - 1
+            For j = 0 To dificultad.LargoY - 1
+                matriz(i, j).Text = matriz(i, j).Tag
+            Next
+        Next
 
         If boton.BackColor <> Color.White Then
             If TypeOf boton Is Button And BombasGeneradas = False Then
@@ -154,6 +164,23 @@
             Next
         Next
         If contadorHabilitados = dificultad.Bombas Then
+            tm1.Stop()
+            Dim usuarios As New Usuarios
+            For i = 0 To usuarios.UsuariosTotales.Length - 1
+                If usuarios.UsuariosTotales(i).StartsWith(FrmEleccionDificultad.txtJugadorActual.Text) Then
+                    Dim lineaUsu As String() = usuarios.UsuariosTotales(i).Split("-")
+                    If dificultad.Bombas = 10 Then
+
+                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 1.5
+                    ElseIf dificultad.Bombas = 40 Then
+                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 3
+                    Else
+                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 5
+                    End If
+                    usuarios.UsuariosTotales(i) = $"{lineaUsu(0)}-{lineaUsu(1)}-{lineaUsu(2)}"
+                End If
+            Next
+            File.WriteAllLines(ruta, usuarios.UsuariosTotales)
             Return True
         End If
         ' contadorHabilitados = 0
