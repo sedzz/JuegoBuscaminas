@@ -3,11 +3,16 @@
 
     Public Property Nombre As String
     Public Property Contraseña As String
-    Public Property Puntuacion As Integer
+    Public Property Puntuacion As Double
 
-    Sub New(nombre As String, contraseña As String)
+    Sub New(nombre As String, contraseña As String, puntuacion As Double)
         Me.Nombre = nombre
         Me.Contraseña = contraseña
+        Me.Puntuacion = puntuacion
+    End Sub
+
+    Sub New(nombre As String)
+        Me.Nombre = nombre
     End Sub
 
     Public Overrides Function Equals(obj As Object) As Boolean

@@ -166,20 +166,7 @@ Public Class FrmTablero
         If contadorHabilitados = dificultad.Bombas Then
             tm1.Stop()
             Dim usuarios As New Usuarios
-            For i = 0 To usuarios.UsuariosTotales.Length - 1
-                If usuarios.UsuariosTotales(i).StartsWith(FrmEleccionDificultad.txtJugadorActual.Text) Then
-                    Dim lineaUsu As String() = usuarios.UsuariosTotales(i).Split("-")
-                    If dificultad.Bombas = 10 Then
-
-                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 1.5
-                    ElseIf dificultad.Bombas = 40 Then
-                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 3
-                    Else
-                        lineaUsu(2) = Double.Parse(lblTimer.Text) * 5
-                    End If
-                    usuarios.UsuariosTotales(i) = $"{lineaUsu(0)}-{lineaUsu(1)}-{lineaUsu(2)}"
-                End If
-            Next
+            MessageBox.Show($"Puntuacion obtenida: {usuarios.CalcularPuntuacion(New Usuario(FrmEleccionDificultad.txtJugadorActual.Text), tiempoTranscurrido, dificultad.Bombas)}")
             File.WriteAllLines(ruta, usuarios.UsuariosTotales)
             Return True
         End If

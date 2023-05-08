@@ -27,13 +27,18 @@ Public Class FrmLoginRegistro
             MessageBox.Show($"Bienvenido {txtUsuario.Text}")
             FrmEleccionDificultad.Show()
         Else
-            MessageBox.Show($"Usuario o contraseña invalidos")
+            MessageBox.Show($"Usuario o contraseña inválidos")
         End If
     End Sub
 
-    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.Click, txtContraseña.Click
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.Click
         Dim evento As TextBox = sender
         evento.SelectAll()
+    End Sub
+    Private Sub txtContraseña_TextChanged(sender As Object, e As EventArgs) Handles txtContraseña.Click
+        Dim evento As TextBox = sender
+        evento.SelectAll()
+        txtContraseña.Text = ""
         txtContraseña.UseSystemPasswordChar = True
     End Sub
 
@@ -52,4 +57,6 @@ Public Class FrmLoginRegistro
         btnVerContraseña.Image = Image
 
     End Sub
+
+
 End Class
