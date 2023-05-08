@@ -1,8 +1,9 @@
 ﻿Imports System.IO
 Public Class Usuarios
-    Private Const rutaFicheroUsuarios As String = "./Recursos/Ficheros/usuarios.txt"
+    Public Property rutaFicheroUsuarios As String = "./Recursos/Ficheros/usuarios.txt"
     Public Property UsuariosTotales As String()
     Public Property Usuarios As New List(Of Usuario)
+
 
     Sub New()
         Me.UsuariosTotales = File.ReadAllLines(rutaFicheroUsuarios)
@@ -11,11 +12,12 @@ Public Class Usuarios
 
     Public Function AñadirUsuario(nombre As String, contraseña As String) As Boolean
         Dim nuevoUsu As New Usuario(nombre, contraseña, 0)
-        For Each linea In Usuarios
-            If Usuarios.Contains(nuevoUsu) Then
-                Return False
-            End If
-        Next
+        If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(contraseña) Then
+            Return False
+        End If
+        If Usuarios.Contains(nuevoUsu) Then
+            Return False
+        End If
         If nombre.Contains("-") OrElse contraseña.Contains("-") Then
             Return False
         End If
@@ -33,15 +35,16 @@ Public Class Usuarios
         Next
     End Sub
     Public Function ConectarUsuario(nombre As String, contraseña As String) As Boolean
+        Dim usuarioAuxiliar As New Usuario(nombre, contraseña)
+        Dim posicion As Integer = Usuarios.IndexOf(usuarioAuxiliar) = -1
+        If posicion = -1 Then
+            Return False
+        End If
 
-        For Each linea In Usuarios
-            If Usuarios.Contains(linea) Then
-                If linea.Contraseña = contraseña Then
-                    Return True
-                End If
-            End If
-        Next
-        Return False
+        If Not Usuarios(posicion).Contraseña = contraseña Then
+            Return False
+        End If
+        Return True
     End Function
 
     Public Function CalcularPuntuacion(usuario As Usuario, puntuacion As Double, cantBombas As Integer) As String
@@ -58,12 +61,20 @@ Public Class Usuarios
                 Else
                     usuarioActual.Puntuacion = puntuacion * 10
                 End If
-                UsuariosTotales(i) = $"{usuarioActual.Nombre}-{usuarioActual.Contraseña}-{usuarioActual.Puntuacion}"
+                Array.Resize(UsuariosTotales, UsuariosTotales.Length + 1)
+                UsuariosTotales(UsuariosTotales.Length - 1) = $"{usuarioActual.Nombre}-{usuarioActual.Contraseña}-{usuarioActual.Puntuacion}"
                 Return usuarioActual.Puntuacion
             End If
 
         Next
+        Return ""
+    End Function
 
+    Public Function PuntuacionUsuarios(usuarios As List(Of Usuario)) As List(Of Usuario)
+        Dim usuariosOrdenados As List(Of Usuario) = usuarios.OrderByDescending(Function(u) u.Puntuacion).ToList
+
+        usuariosOrdenados = usuariosOrdenados.Take(10).ToList
+        Return usuariosOrdenados
     End Function
 
 End Class

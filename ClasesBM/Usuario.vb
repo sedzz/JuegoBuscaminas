@@ -15,6 +15,11 @@
         Me.Nombre = nombre
     End Sub
 
+    Sub New(nombre As String, contraseña As String)
+        Me.Nombre = nombre
+        Me.Contraseña = contraseña
+    End Sub
+
     Public Overrides Function Equals(obj As Object) As Boolean
         Return Equals(TryCast(obj, Usuario))
     End Function

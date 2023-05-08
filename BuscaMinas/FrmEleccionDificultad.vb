@@ -28,5 +28,4 @@ Public Class FrmEleccionDificultad
         Height = 400
         txtJugadorActual.Text = FrmLoginRegistro.txtUsuario.Text
     End Sub
-
 End Class

@@ -58,5 +58,7 @@ Public Class FrmLoginRegistro
 
     End Sub
 
-
+    Private Sub btnMarcado_Click(sender As Object, e As EventArgs) Handles btnMarcador.Click
+        FrmMarcador.Show()
+    End Sub
 End Class

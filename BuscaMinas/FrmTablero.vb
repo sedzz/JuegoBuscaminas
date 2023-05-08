@@ -11,7 +11,7 @@ Public Class FrmTablero
     Dim totalBombas As List(Of Button) = New List(Of Button)
     Dim zonaSeguraCreada As Boolean = False
     Dim tiempoTranscurrido As Integer = 1000
-    Dim ruta = "./Recursos/Ficheros/usuarios.txt"
+    'Dim ruta = "./Recursos/Ficheros/usuarios.txt"
 
     Private Sub Form1_Show(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -166,8 +166,8 @@ Public Class FrmTablero
         If contadorHabilitados = dificultad.Bombas Then
             tm1.Stop()
             Dim usuarios As New Usuarios
-            MessageBox.Show($"Puntuacion obtenida: {usuarios.CalcularPuntuacion(New Usuario(FrmEleccionDificultad.txtJugadorActual.Text), tiempoTranscurrido, dificultad.Bombas)}")
-            File.WriteAllLines(ruta, usuarios.UsuariosTotales)
+            MessageBox.Show($"Puntuación obtenida: {usuarios.CalcularPuntuacion(New Usuario(FrmEleccionDificultad.txtJugadorActual.Text), tiempoTranscurrido, dificultad.Bombas)}")
+            File.WriteAllLines(usuarios.rutaFicheroUsuarios, usuarios.UsuariosTotales)
             Return True
         End If
         ' contadorHabilitados = 0
