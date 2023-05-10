@@ -56,6 +56,7 @@ Partial Class FrmMarcador
         '
         'gbUltimasPuntuaciones
         '
+        Me.gbUltimasPuntuaciones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.gbUltimasPuntuaciones.Controls.Add(Me.lstMarcadorUltimos)
         Me.gbUltimasPuntuaciones.Font = New System.Drawing.Font("Palatino Linotype", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbUltimasPuntuaciones.Location = New System.Drawing.Point(464, 47)
@@ -63,7 +64,7 @@ Partial Class FrmMarcador
         Me.gbUltimasPuntuaciones.Size = New System.Drawing.Size(421, 233)
         Me.gbUltimasPuntuaciones.TabIndex = 14
         Me.gbUltimasPuntuaciones.TabStop = False
-        Me.gbUltimasPuntuaciones.Text = "ULTIMAS PUNTUACIONES"
+        Me.gbUltimasPuntuaciones.Text = "ÚLTIMAS PUNTUACIONES"
         '
         'lstMarcadorUltimos
         '
@@ -89,8 +90,10 @@ Partial Class FrmMarcador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(963, 513)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "FrmMarcador"
         Me.Text = "Marcador"
         Me.GroupBox1.ResumeLayout(False)

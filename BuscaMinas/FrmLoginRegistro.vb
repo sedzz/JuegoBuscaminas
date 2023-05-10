@@ -15,7 +15,9 @@ Public Class FrmLoginRegistro
     Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
         If usuarios.AñadirUsuario(txtUsuario.Text, txtContraseña.Text) Then
             MessageBox.Show("Usuario creado correctamente")
+            Me.Hide()
             FrmEleccionDificultad.Show()
+
         Else
             MessageBox.Show("Usuario ya existente")
         End If
@@ -25,7 +27,9 @@ Public Class FrmLoginRegistro
     Private Sub btnConectarse_Click(sender As Object, e As EventArgs) Handles btnConectarse.Click
         If usuarios.ConectarUsuario(txtUsuario.Text, txtContraseña.Text) Then
             MessageBox.Show($"Bienvenido {txtUsuario.Text}")
+            Me.Hide()
             FrmEleccionDificultad.Show()
+
         Else
             MessageBox.Show($"Usuario o contraseña inválidos")
         End If

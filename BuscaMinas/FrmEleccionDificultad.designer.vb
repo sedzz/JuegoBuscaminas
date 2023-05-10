@@ -110,7 +110,7 @@ Partial Class FrmEleccionDificultad
         Me.Controls.Add(Me.btnFacil)
         Me.MaximizeBox = False
         Me.Name = "FrmEleccionDificultad"
-        Me.Text = "Form2"
+        Me.Text = "Menú"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

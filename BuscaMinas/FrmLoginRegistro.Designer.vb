@@ -87,6 +87,7 @@ Partial Class FrmLoginRegistro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblGuion)
         Me.Controls.Add(Me.btnVerContraseña)
@@ -94,6 +95,7 @@ Partial Class FrmLoginRegistro
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.btnConectarse)
         Me.Controls.Add(Me.btnRegistro)
+        Me.MaximizeBox = False
         Me.Name = "FrmLoginRegistro"
         Me.Text = "FrmLoginRegistro"
         Me.ResumeLayout(False)

@@ -4,7 +4,7 @@ Public Class FrmEleccionDificultad
 
     Private Sub boton_click(sender As Object, e As EventArgs) Handles btnFacil.Click, btnMedio.Click, btnDificil.Click
         Dim boton As Button = TryCast(sender, Button)
-        dificultad = New Dificultad
+        dificultad = New Dificultad 'TODO Contemplar hacer un array/s para la dificultad
         Select Case boton.Name
             Case "btnFacil"
                 dificultad.AnchoX = 8
@@ -32,6 +32,8 @@ Public Class FrmEleccionDificultad
     Private Sub btnMarcado_Click(sender As Object, e As EventArgs) Handles btnMarcador.Click
         FrmMarcador.Show()
     End Sub
-
+    Private Sub FrmEleccionDificultad_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
+        FrmLoginRegistro.Show()
+    End Sub
 
 End Class
