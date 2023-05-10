@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmLoginRegistro
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmLoginRegistro
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -28,7 +28,6 @@ Partial Class FrmLoginRegistro
         Me.btnRegistro = New System.Windows.Forms.Button()
         Me.btnVerContraseña = New System.Windows.Forms.Button()
         Me.lblGuion = New System.Windows.Forms.Label()
-        Me.btnMarcador = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtContraseña
@@ -84,21 +83,11 @@ Partial Class FrmLoginRegistro
         Me.lblGuion.TabIndex = 12
         Me.lblGuion.Text = "El nombre no puede incluir '-'"
         '
-        'btnMarcador
-        '
-        Me.btnMarcador.Location = New System.Drawing.Point(26, 36)
-        Me.btnMarcador.Name = "btnMarcador"
-        Me.btnMarcador.Size = New System.Drawing.Size(144, 87)
-        Me.btnMarcador.TabIndex = 13
-        Me.btnMarcador.Text = "Marcador"
-        Me.btnMarcador.UseVisualStyleBackColor = True
-        '
         'FrmLoginRegistro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btnMarcador)
         Me.Controls.Add(Me.lblGuion)
         Me.Controls.Add(Me.btnVerContraseña)
         Me.Controls.Add(Me.txtContraseña)
@@ -118,5 +107,4 @@ Partial Class FrmLoginRegistro
     Friend WithEvents btnRegistro As Button
     Friend WithEvents btnVerContraseña As Button
     Friend WithEvents lblGuion As Label
-    Friend WithEvents btnMarcador As Button
 End Class

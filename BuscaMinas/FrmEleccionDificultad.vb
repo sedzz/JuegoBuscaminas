@@ -28,4 +28,10 @@ Public Class FrmEleccionDificultad
         Height = 400
         txtJugadorActual.Text = FrmLoginRegistro.txtUsuario.Text
     End Sub
+
+    Private Sub btnMarcado_Click(sender As Object, e As EventArgs) Handles btnMarcador.Click
+        FrmMarcador.Show()
+    End Sub
+
+
 End Class

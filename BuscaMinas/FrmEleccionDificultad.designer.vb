@@ -22,73 +22,86 @@ Partial Class FrmEleccionDificultad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnFacil = New System.Windows.Forms.Button()
-        Me.btnMedio = New System.Windows.Forms.Button()
-        Me.btnDificil = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtJugadorActual = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnDificil = New System.Windows.Forms.Button()
+        Me.btnMedio = New System.Windows.Forms.Button()
+        Me.btnFacil = New System.Windows.Forms.Button()
+        Me.btnMarcador = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnFacil
+        'txtJugadorActual
         '
-        Me.btnFacil.Location = New System.Drawing.Point(671, 23)
-        Me.btnFacil.Name = "btnFacil"
-        Me.btnFacil.Size = New System.Drawing.Size(90, 55)
-        Me.btnFacil.TabIndex = 0
-        Me.btnFacil.Text = "Fácil"
-        Me.btnFacil.UseVisualStyleBackColor = True
-        '
-        'btnMedio
-        '
-        Me.btnMedio.Location = New System.Drawing.Point(671, 105)
-        Me.btnMedio.Name = "btnMedio"
-        Me.btnMedio.Size = New System.Drawing.Size(90, 53)
-        Me.btnMedio.TabIndex = 1
-        Me.btnMedio.Text = "Medio"
-        Me.btnMedio.UseVisualStyleBackColor = True
-        '
-        'btnDificil
-        '
-        Me.btnDificil.Location = New System.Drawing.Point(671, 186)
-        Me.btnDificil.Name = "btnDificil"
-        Me.btnDificil.Size = New System.Drawing.Size(90, 56)
-        Me.btnDificil.TabIndex = 2
-        Me.btnDificil.Text = "Difícil"
-        Me.btnDificil.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(213, 178)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(352, 56)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "BUSCAMINAS"
+        Me.txtJugadorActual.Location = New System.Drawing.Point(844, 455)
+        Me.txtJugadorActual.Name = "txtJugadorActual"
+        Me.txtJugadorActual.Size = New System.Drawing.Size(67, 22)
+        Me.txtJugadorActual.TabIndex = 19
+        Me.txtJugadorActual.Text = "Anónimo"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 23)
+        Me.Label2.Location = New System.Drawing.Point(772, 458)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 16)
-        Me.Label2.TabIndex = 8
+        Me.Label2.TabIndex = 18
         Me.Label2.Text = "Jugador : "
         '
-        'txtJugadorActual
+        'Label1
         '
-        Me.txtJugadorActual.Location = New System.Drawing.Point(84, 17)
-        Me.txtJugadorActual.Name = "txtJugadorActual"
-        Me.txtJugadorActual.Size = New System.Drawing.Size(67, 22)
-        Me.txtJugadorActual.TabIndex = 9
-        Me.txtJugadorActual.Text = "Anónimo"
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Perpetua Titling MT", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(297, 98)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(467, 78)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "BUSCAMINAS"
+        '
+        'btnDificil
+        '
+        Me.btnDificil.Location = New System.Drawing.Point(778, 229)
+        Me.btnDificil.Name = "btnDificil"
+        Me.btnDificil.Size = New System.Drawing.Size(117, 70)
+        Me.btnDificil.TabIndex = 16
+        Me.btnDificil.Text = "Difícil"
+        Me.btnDificil.UseVisualStyleBackColor = True
+        '
+        'btnMedio
+        '
+        Me.btnMedio.Location = New System.Drawing.Point(394, 233)
+        Me.btnMedio.Name = "btnMedio"
+        Me.btnMedio.Size = New System.Drawing.Size(117, 67)
+        Me.btnMedio.TabIndex = 15
+        Me.btnMedio.Text = "Medio"
+        Me.btnMedio.UseVisualStyleBackColor = True
+        '
+        'btnFacil
+        '
+        Me.btnFacil.Location = New System.Drawing.Point(17, 229)
+        Me.btnFacil.Name = "btnFacil"
+        Me.btnFacil.Size = New System.Drawing.Size(117, 69)
+        Me.btnFacil.TabIndex = 14
+        Me.btnFacil.Text = "Fácil"
+        Me.btnFacil.UseVisualStyleBackColor = True
+        '
+        'btnMarcador
+        '
+        Me.btnMarcador.Location = New System.Drawing.Point(307, 421)
+        Me.btnMarcador.Name = "btnMarcador"
+        Me.btnMarcador.Size = New System.Drawing.Size(290, 53)
+        Me.btnMarcador.TabIndex = 20
+        Me.btnMarcador.Text = "Rankings"
+        Me.btnMarcador.UseVisualStyleBackColor = True
         '
         'FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(794, 434)
+        Me.ClientSize = New System.Drawing.Size(931, 500)
+        Me.Controls.Add(Me.btnMarcador)
         Me.Controls.Add(Me.txtJugadorActual)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -102,11 +115,11 @@ Partial Class FrmEleccionDificultad
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnFacil As Button
-    Friend WithEvents btnMedio As Button
-    Friend WithEvents btnDificil As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents txtJugadorActual As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnDificil As Button
+    Friend WithEvents btnMedio As Button
+    Friend WithEvents btnFacil As Button
+    Friend WithEvents btnMarcador As Button
 End Class
