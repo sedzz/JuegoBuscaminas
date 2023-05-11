@@ -98,6 +98,7 @@ Partial Class FrmMarcador
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.Name = "FrmMarcador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Marcador"
         Me.GroupBox1.ResumeLayout(False)
         Me.gbUltimasPuntuaciones.ResumeLayout(False)

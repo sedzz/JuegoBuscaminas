@@ -97,6 +97,7 @@ Partial Class FrmLoginRegistro
         Me.Controls.Add(Me.btnRegistro)
         Me.MaximizeBox = False
         Me.Name = "FrmLoginRegistro"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmLoginRegistro"
         Me.ResumeLayout(False)
         Me.PerformLayout()

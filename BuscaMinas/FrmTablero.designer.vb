@@ -63,6 +63,7 @@ Partial Class FrmTablero
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "FrmTablero"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
         Me.ResumeLayout(False)
         Me.PerformLayout()

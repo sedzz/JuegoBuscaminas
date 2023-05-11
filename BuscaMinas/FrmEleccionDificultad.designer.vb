@@ -52,6 +52,8 @@ Partial Class FrmEleccionDificultad
         '
         'btnDificil
         '
+        Me.btnDificil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDificil.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDificil.Location = New System.Drawing.Point(778, 229)
         Me.btnDificil.Name = "btnDificil"
         Me.btnDificil.Size = New System.Drawing.Size(117, 70)
@@ -61,6 +63,8 @@ Partial Class FrmEleccionDificultad
         '
         'btnMedio
         '
+        Me.btnMedio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMedio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnMedio.Location = New System.Drawing.Point(394, 233)
         Me.btnMedio.Name = "btnMedio"
         Me.btnMedio.Size = New System.Drawing.Size(117, 67)
@@ -70,6 +74,8 @@ Partial Class FrmEleccionDificultad
         '
         'btnFacil
         '
+        Me.btnFacil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFacil.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnFacil.Location = New System.Drawing.Point(17, 229)
         Me.btnFacil.Name = "btnFacil"
         Me.btnFacil.Size = New System.Drawing.Size(117, 69)
@@ -112,6 +118,7 @@ Partial Class FrmEleccionDificultad
         Me.Controls.Add(Me.btnFacil)
         Me.MaximizeBox = False
         Me.Name = "FrmEleccionDificultad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menú"
         Me.ResumeLayout(False)
         Me.PerformLayout()
