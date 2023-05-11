@@ -36,7 +36,7 @@ Public Class Usuarios
     End Sub
     Public Function ConectarUsuario(nombre As String, contraseña As String) As Boolean
         Dim usuarioAuxiliar As New Usuario(nombre, contraseña)
-        Dim posicion As Integer = Usuarios.IndexOf(usuarioAuxiliar) = -1
+        Dim posicion As Integer = Usuarios.IndexOf(usuarioAuxiliar)
         If posicion = -1 Then
             Return False
         End If

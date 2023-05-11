@@ -22,22 +22,14 @@ Partial Class FrmEleccionDificultad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.txtJugadorActual = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnDificil = New System.Windows.Forms.Button()
         Me.btnMedio = New System.Windows.Forms.Button()
         Me.btnFacil = New System.Windows.Forms.Button()
         Me.btnMarcador = New System.Windows.Forms.Button()
+        Me.txtJugadorActual = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        '
-        'txtJugadorActual
-        '
-        Me.txtJugadorActual.Location = New System.Drawing.Point(844, 455)
-        Me.txtJugadorActual.Name = "txtJugadorActual"
-        Me.txtJugadorActual.Size = New System.Drawing.Size(67, 22)
-        Me.txtJugadorActual.TabIndex = 19
-        Me.txtJugadorActual.Text = "Anónimo"
         '
         'Label2
         '
@@ -94,6 +86,16 @@ Partial Class FrmEleccionDificultad
         Me.btnMarcador.Text = "Rankings"
         Me.btnMarcador.UseVisualStyleBackColor = True
         '
+        'txtJugadorActual
+        '
+        Me.txtJugadorActual.Enabled = False
+        Me.txtJugadorActual.Location = New System.Drawing.Point(923, 485)
+        Me.txtJugadorActual.Name = "txtJugadorActual"
+        Me.txtJugadorActual.Size = New System.Drawing.Size(10, 22)
+        Me.txtJugadorActual.TabIndex = 19
+        Me.txtJugadorActual.Text = "Anónimo"
+        Me.txtJugadorActual.Visible = False
+        '
         'FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -115,11 +117,11 @@ Partial Class FrmEleccionDificultad
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtJugadorActual As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnDificil As Button
     Friend WithEvents btnMedio As Button
     Friend WithEvents btnFacil As Button
     Friend WithEvents btnMarcador As Button
+    Friend WithEvents txtJugadorActual As TextBox
 End Class

@@ -38,8 +38,10 @@ Partial Class FrmMarcador
         Me.lstMarcador.ItemHeight = 23
         Me.lstMarcador.Location = New System.Drawing.Point(30, 38)
         Me.lstMarcador.Name = "lstMarcador"
+        Me.lstMarcador.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.lstMarcador.Size = New System.Drawing.Size(360, 142)
         Me.lstMarcador.TabIndex = 0
+        Me.lstMarcador.UseWaitCursor = True
         '
         'GroupBox1
         '
@@ -72,6 +74,7 @@ Partial Class FrmMarcador
         Me.lstMarcadorUltimos.ItemHeight = 23
         Me.lstMarcadorUltimos.Location = New System.Drawing.Point(30, 37)
         Me.lstMarcadorUltimos.Name = "lstMarcadorUltimos"
+        Me.lstMarcadorUltimos.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.lstMarcadorUltimos.Size = New System.Drawing.Size(360, 142)
         Me.lstMarcadorUltimos.TabIndex = 1
         '
