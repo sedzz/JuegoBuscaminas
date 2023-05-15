@@ -43,11 +43,12 @@ Public Class FrmTablero
         Dim rnd As New Random
         Dim posicionX, posicionY As Integer
 
-        For i = 0 To dificultad.AnchoX - 1
-            For j = 0 To dificultad.LargoY - 1
-                matriz(i, j).Text = matriz(i, j).Tag
-            Next
-        Next
+        ' FOR PARA VER TODOS LOS NÚMEROS E IR MÁS RÁPIDO
+        'For i = 0 To dificultad.AnchoX - 1
+        '    For j = 0 To dificultad.LargoY - 1
+        '        matriz(i, j).Text = matriz(i, j).Tag
+        '    Next
+        'Next
 
         If boton.BackColor <> Color.White Then
             If TypeOf boton Is Button And BombasGeneradas = False Then
