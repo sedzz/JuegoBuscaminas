@@ -30,6 +30,11 @@ Public Class FrmTablero
         End Select
         CrearTablero()
         tm1.Start()
+        lblNumeroDeBombas.Text = dificultad.Bombas
+        Dim rutaImagen As String = "./Recursos/Imagenes/bomba.png"
+        Dim imagenBomba As Image = Image.FromFile(rutaImagen)
+        lblFotoBomba.Image = imagenBomba
+
     End Sub
 
     Private Sub Form1_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
@@ -103,6 +108,8 @@ Public Class FrmTablero
                     MessageBox.Show("Has explotado una bomba, volveras al menú")
                     Close()
                     FrmEleccionDificultad.Show()
+                Case 0
+                    boton.BackColor = Color.GhostWhite
                 Case 1
                     boton.BackColor = Color.Blue
                     tiempoTranscurrido += 10
@@ -128,7 +135,11 @@ Public Class FrmTablero
                     boton.BackColor = Color.DarkCyan
                     tiempoTranscurrido += 40
             End Select
+
             boton.Text = boton.Tag
+            If boton.Text = "0" Then
+                boton.Text = ""
+            End If
         End If
     End Sub
 
@@ -183,7 +194,6 @@ Public Class FrmTablero
 
             boton.BackColor = Color.WhiteSmoke
             boton.Image = Nothing
-            lblNumeroBombas.Text -= 1
             Exit Sub
         End If
 
@@ -191,7 +201,6 @@ Public Class FrmTablero
             Dim imageBandera As Image = Image.FromFile("./Recursos/Imagenes/bandera.png")
             boton.Image = imageBandera
             boton.BackColor = Color.White
-            lblNumeroBombas.Text += 1
         End If
 
 
@@ -224,7 +233,10 @@ Public Class FrmTablero
                 For y As Integer = posicionY - 1 To posicionY + 1
                     If Not (x = -1 OrElse y = -1) And Not (x = dificultad.AnchoX OrElse y = dificultad.LargoY) Then
                         matriz(x, y).Text = matriz(x, y).Tag
+                        If matriz(x, y).Text = "0" Then matriz(x, y).Text = ""
                         Select Case matriz(x, y).Tag
+                            Case 0
+                                matriz(x, y).BackColor = Color.GhostWhite
                             Case 1
                                 matriz(x, y).BackColor = Color.Blue
                             Case 2
@@ -277,7 +289,7 @@ Public Class FrmTablero
                 matriz(i, j).Tag = 0
                 matriz(i, j).Size = New Size(30, 30)
                 matriz(i, j).Location = New Point(x, y)
-                matriz(i, j).BackColor = Color.WhiteSmoke
+                matriz(i, j).BackColor = Color.Azure
                 matriz(i, j).Font = New Font("Cooper", 10, FontStyle.Bold, GraphicsUnit.Point)
                 y += matriz(i, j).Size.Height
                 Controls.Add(matriz(i, j))
@@ -299,6 +311,10 @@ Public Class FrmTablero
             Close()
             FrmEleccionDificultad.Show()
         End If
+
+    End Sub
+
+    Private Sub lblTimer_Click(sender As Object, e As EventArgs) Handles lblTimer.Click
 
     End Sub
 End Class

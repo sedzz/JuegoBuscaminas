@@ -25,7 +25,8 @@ Partial Class FrmTablero
         Me.components = New System.ComponentModel.Container()
         Me.tm1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTimer = New System.Windows.Forms.Label()
-        Me.lblNumeroBombas = New System.Windows.Forms.Label()
+        Me.lblNumeroDeBombas = New System.Windows.Forms.Label()
+        Me.lblFotoBomba = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'tm1
@@ -43,14 +44,20 @@ Partial Class FrmTablero
         Me.lblTimer.TabIndex = 0
         Me.lblTimer.Text = "  "
         '
-        'lblNumeroBombas
+        'lblNumeroDeBombas
         '
-        Me.lblNumeroBombas.AutoSize = True
-        Me.lblNumeroBombas.Location = New System.Drawing.Point(84, 13)
-        Me.lblNumeroBombas.Name = "lblNumeroBombas"
-        Me.lblNumeroBombas.Size = New System.Drawing.Size(14, 16)
-        Me.lblNumeroBombas.TabIndex = 1
-        Me.lblNumeroBombas.Text = "0"
+        Me.lblNumeroDeBombas.AutoSize = True
+        Me.lblNumeroDeBombas.Location = New System.Drawing.Point(88, 20)
+        Me.lblNumeroDeBombas.Name = "lblNumeroDeBombas"
+        Me.lblNumeroDeBombas.Size = New System.Drawing.Size(0, 16)
+        Me.lblNumeroDeBombas.TabIndex = 1
+        '
+        'lblFotoBomba
+        '
+        Me.lblFotoBomba.Location = New System.Drawing.Point(24, 9)
+        Me.lblFotoBomba.Name = "lblFotoBomba"
+        Me.lblFotoBomba.Size = New System.Drawing.Size(45, 29)
+        Me.lblFotoBomba.TabIndex = 2
         '
         'FrmTablero
         '
@@ -58,7 +65,8 @@ Partial Class FrmTablero
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1067, 554)
-        Me.Controls.Add(Me.lblNumeroBombas)
+        Me.Controls.Add(Me.lblFotoBomba)
+        Me.Controls.Add(Me.lblNumeroDeBombas)
         Me.Controls.Add(Me.lblTimer)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
@@ -72,5 +80,6 @@ Partial Class FrmTablero
 
     Friend WithEvents tm1 As Timer
     Friend WithEvents lblTimer As Label
-    Friend WithEvents lblNumeroBombas As Label
+    Friend WithEvents lblNumeroDeBombas As Label
+    Friend WithEvents lblFotoBomba As Label
 End Class
