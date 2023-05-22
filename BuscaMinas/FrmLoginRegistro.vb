@@ -62,5 +62,7 @@ Public Class FrmLoginRegistro
 
     End Sub
 
-
+    Private Sub btnParaAtras_Click(sender As Object, e As EventArgs) Handles btnParaAtras.Click
+        Close()
+    End Sub
 End Class

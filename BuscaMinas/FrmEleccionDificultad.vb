@@ -36,4 +36,8 @@ Public Class FrmEleccionDificultad
     Private Sub FrmEleccionDificultad_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         FrmLoginRegistro.Show()
     End Sub
+
+    Private Sub btnParaAtras_Click(sender As Object, e As EventArgs) Handles btnParaAtras.Click
+        Close()
+    End Sub
 End Class

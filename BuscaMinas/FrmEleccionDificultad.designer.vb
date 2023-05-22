@@ -29,6 +29,7 @@ Partial Class FrmEleccionDificultad
         Me.btnFacil = New System.Windows.Forms.Button()
         Me.btnMarcador = New System.Windows.Forms.Button()
         Me.txtJugadorActual = New System.Windows.Forms.TextBox()
+        Me.btnParaAtras = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -102,6 +103,15 @@ Partial Class FrmEleccionDificultad
         Me.txtJugadorActual.Text = "Anónimo"
         Me.txtJugadorActual.Visible = False
         '
+        'btnParaAtras
+        '
+        Me.btnParaAtras.Location = New System.Drawing.Point(53, 415)
+        Me.btnParaAtras.Name = "btnParaAtras"
+        Me.btnParaAtras.Size = New System.Drawing.Size(197, 58)
+        Me.btnParaAtras.TabIndex = 21
+        Me.btnParaAtras.Text = "Volver"
+        Me.btnParaAtras.UseVisualStyleBackColor = True
+        '
         'FrmEleccionDificultad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -109,6 +119,7 @@ Partial Class FrmEleccionDificultad
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(931, 500)
+        Me.Controls.Add(Me.btnParaAtras)
         Me.Controls.Add(Me.btnMarcador)
         Me.Controls.Add(Me.txtJugadorActual)
         Me.Controls.Add(Me.Label2)
@@ -131,4 +142,5 @@ Partial Class FrmEleccionDificultad
     Friend WithEvents btnFacil As Button
     Friend WithEvents btnMarcador As Button
     Friend WithEvents txtJugadorActual As TextBox
+    Friend WithEvents btnParaAtras As Button
 End Class

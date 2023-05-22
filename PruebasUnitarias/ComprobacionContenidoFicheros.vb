@@ -1,9 +1,11 @@
-﻿Imports System.Text
+﻿Imports System.IO
+Imports System.Text
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
 <TestClass()> Public Class ComprobacionContenidoFicheros
 
-    <TestMethod()> Public Sub TestMethod1()
+    <TestMethod()> Public Sub PruebaExitosa()
+
 
     End Sub
 

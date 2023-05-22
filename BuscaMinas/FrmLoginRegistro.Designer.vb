@@ -28,6 +28,7 @@ Partial Class FrmLoginRegistro
         Me.btnRegistro = New System.Windows.Forms.Button()
         Me.btnVerContraseña = New System.Windows.Forms.Button()
         Me.lblGuion = New System.Windows.Forms.Label()
+        Me.btnParaAtras = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtContraseña
@@ -81,7 +82,16 @@ Partial Class FrmLoginRegistro
         Me.lblGuion.Name = "lblGuion"
         Me.lblGuion.Size = New System.Drawing.Size(178, 27)
         Me.lblGuion.TabIndex = 12
-        Me.lblGuion.Text = "El nombre no puede incluir '-'"
+        Me.lblGuion.Text = "El nombre no puede incluir -"
+        '
+        'btnParaAtras
+        '
+        Me.btnParaAtras.Location = New System.Drawing.Point(662, 406)
+        Me.btnParaAtras.Name = "btnParaAtras"
+        Me.btnParaAtras.Size = New System.Drawing.Size(126, 32)
+        Me.btnParaAtras.TabIndex = 23
+        Me.btnParaAtras.Text = "Cerrar"
+        Me.btnParaAtras.UseVisualStyleBackColor = True
         '
         'FrmLoginRegistro
         '
@@ -89,6 +99,7 @@ Partial Class FrmLoginRegistro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnParaAtras)
         Me.Controls.Add(Me.lblGuion)
         Me.Controls.Add(Me.btnVerContraseña)
         Me.Controls.Add(Me.txtContraseña)
@@ -110,4 +121,5 @@ Partial Class FrmLoginRegistro
     Friend WithEvents btnRegistro As Button
     Friend WithEvents btnVerContraseña As Button
     Friend WithEvents lblGuion As Label
+    Friend WithEvents btnParaAtras As Button
 End Class

@@ -27,6 +27,7 @@ Partial Class FrmMarcador
         Me.gbUltimasPuntuaciones = New System.Windows.Forms.GroupBox()
         Me.lstMarcadorUltimos = New System.Windows.Forms.ListBox()
         Me.gbMejoresPuntuaciones = New System.Windows.Forms.GroupBox()
+        Me.btnParaAtras = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.gbUltimasPuntuaciones.SuspendLayout()
         Me.gbMejoresPuntuaciones.SuspendLayout()
@@ -89,12 +90,22 @@ Partial Class FrmMarcador
         Me.gbMejoresPuntuaciones.TabStop = False
         Me.gbMejoresPuntuaciones.Text = "MEJORES PUNTUACIONES"
         '
+        'btnParaAtras
+        '
+        Me.btnParaAtras.Location = New System.Drawing.Point(377, 433)
+        Me.btnParaAtras.Name = "btnParaAtras"
+        Me.btnParaAtras.Size = New System.Drawing.Size(197, 58)
+        Me.btnParaAtras.TabIndex = 22
+        Me.btnParaAtras.Text = "Volver"
+        Me.btnParaAtras.UseVisualStyleBackColor = True
+        '
         'FrmMarcador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(963, 513)
+        Me.Controls.Add(Me.btnParaAtras)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.Name = "FrmMarcador"
@@ -112,4 +123,5 @@ Partial Class FrmMarcador
     Friend WithEvents gbUltimasPuntuaciones As GroupBox
     Friend WithEvents gbMejoresPuntuaciones As GroupBox
     Friend WithEvents lstMarcadorUltimos As ListBox
+    Friend WithEvents btnParaAtras As Button
 End Class
