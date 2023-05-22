@@ -96,7 +96,6 @@
     </Compile>
     <Compile Include="ArchivosLocalizables.vb" />
     <Compile Include="ComprobacionContenidoFicheros.vb" />
-    <Compile Include="TestClassAttribute.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
