@@ -23,8 +23,8 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         For Each linea In contenido
             lineaArray = linea.Split("."c) ' Da error por que no se separa con puntos
             esNumero = lineaArray(2).ToString
-            Assert.IsTrue(Double.TryParse(esNumero, lineaArray(2)))
-            Assert.AreEqual(3, lineaArray.Length)
+            Assert.IsTrue(Double.TryParse(esNumero, lineaArray(2)), "La puntuacion no puede tener ese valor")
+            Assert.AreEqual(3, lineaArray.Length, "Los datos no tiene un valor correcto")
         Next
     End Sub
 
