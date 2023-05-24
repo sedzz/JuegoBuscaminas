@@ -6,7 +6,6 @@ Imports ClasesBM
 
     <TestMethod()> Public Sub RegistroExistoso()
         Dim usuarios As New Usuarios
-
         Dim usuario As String = "kolokentoki" 'vamos a probar a crear un usuario
         Dim contraseña As String = "klk"
         Assert.IsTrue(usuarios.AñadirUsuario(usuario, contraseña))
