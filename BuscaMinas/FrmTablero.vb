@@ -109,7 +109,7 @@ Public Class FrmTablero
                     Close()
                     FrmEleccionDificultad.Show()
                 Case 0
-                    boton.BackColor = Color.GhostWhite
+                    boton.BackColor = Color.LightGray
                 Case 1
                     boton.BackColor = Color.Blue
                     tiempoTranscurrido += 10
@@ -236,7 +236,7 @@ Public Class FrmTablero
                         If matriz(x, y).Text = "0" Then matriz(x, y).Text = ""
                         Select Case matriz(x, y).Tag
                             Case 0
-                                matriz(x, y).BackColor = Color.GhostWhite
+                                matriz(x, y).BackColor = Color.LightGray
                             Case 1
                                 matriz(x, y).BackColor = Color.Blue
                             Case 2

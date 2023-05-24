@@ -71,7 +71,7 @@ Public Class Usuarios
     End Function
 
     Public Function PuntuacionUsuarios(usuarios As List(Of Usuario)) As List(Of Usuario)
-        Dim usuariosOrdenados As List(Of Usuario) = usuarios.OrderByDescending(Function(u) u.Puntuacion).ToList
+        Dim usuariosOrdenados As List(Of Usuario) = usuarios.OrderByDescending(Function(usuario) usuario.Puntuacion).ToList
 
         usuariosOrdenados = usuariosOrdenados.Take(10).ToList
         Return usuariosOrdenados
