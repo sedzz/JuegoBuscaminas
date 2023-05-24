@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "buscaminas", "buscaminas\bu
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClasesBM", "ClasesBM\ClasesBM.vbproj", "{C4D81929-F87D-4BD7-A9FC-08015C2A0662}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.vbproj", "{7C1391E9-2A72-45FD-BAC5-F722D5213B99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C4D81929-F87D-4BD7-A9FC-08015C2A0662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4D81929-F87D-4BD7-A9FC-08015C2A0662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4D81929-F87D-4BD7-A9FC-08015C2A0662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1391E9-2A72-45FD-BAC5-F722D5213B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1391E9-2A72-45FD-BAC5-F722D5213B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1391E9-2A72-45FD-BAC5-F722D5213B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1391E9-2A72-45FD-BAC5-F722D5213B99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
