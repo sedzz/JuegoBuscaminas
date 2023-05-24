@@ -1,13 +1,23 @@
 ﻿Public Class Usuario
     Implements IEquatable(Of Usuario)
 
-    Public Property nombre As String
-    Public Property contraseña As String
-    Public Property puntuacion As Integer
+    Public Property Nombre As String
+    Public Property Contraseña As String
+    Public Property Puntuacion As Double
+
+    Sub New(nombre As String, contraseña As String, puntuacion As Double)
+        Me.Nombre = nombre
+        Me.Contraseña = contraseña
+        Me.Puntuacion = puntuacion
+    End Sub
+
+    Sub New(nombre As String)
+        Me.Nombre = nombre
+    End Sub
 
     Sub New(nombre As String, contraseña As String)
-        Me.nombre = nombre
-        Me.contraseña = contraseña
+        Me.Nombre = nombre
+        Me.Contraseña = contraseña
     End Sub
 
     Public Overrides Function Equals(obj As Object) As Boolean
@@ -16,8 +26,7 @@
 
     Public Overloads Function Equals(other As Usuario) As Boolean Implements IEquatable(Of Usuario).Equals
         Return other IsNot Nothing AndAlso
-               nombre.ToLower = other.nombre.ToLower AndAlso
-               contraseña = other.contraseña
+               Nombre.ToLower = other.Nombre.ToLower
     End Function
 
     Public Shared Operator =(left As Usuario, right As Usuario) As Boolean
