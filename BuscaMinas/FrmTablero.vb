@@ -49,11 +49,11 @@ Public Class FrmTablero
         Dim posicionX, posicionY As Integer
 
         ' FOR PARA VER TODOS LOS NÚMEROS E IR MÁS RÁPIDO
-        'For i = 0 To dificultad.AnchoX - 1
-        '    For j = 0 To dificultad.LargoY - 1
-        '        matriz(i, j).Text = matriz(i, j).Tag
-        '    Next
-        'Next
+        For i = 0 To dificultad.AnchoX - 1
+            For j = 0 To dificultad.LargoY - 1
+                matriz(i, j).Text = matriz(i, j).Tag
+            Next
+        Next
 
         If boton.BackColor <> Color.White Then
             If TypeOf boton Is Button And BombasGeneradas = False Then
@@ -182,7 +182,6 @@ Public Class FrmTablero
             File.WriteAllLines(usuarios.rutaFicheroUsuarios, usuarios.UsuariosTotales)
             Return True
         End If
-        ' contadorHabilitados = 0
         Return False
     End Function
 
@@ -302,7 +301,7 @@ Public Class FrmTablero
         zonaSeguraCreada = True
     End Sub
 
-    Private Sub tm1_Tick(sender As Object, e As EventArgs) Handles tm1.Tick
+    Private Sub Tm1_Tick(sender As Object, e As EventArgs) Handles tm1.Tick
         tiempoTranscurrido -= 1
         lblTimer.Text = (tiempoTranscurrido).ToString("D2")
         If tiempoTranscurrido = 0 Then
@@ -314,7 +313,7 @@ Public Class FrmTablero
 
     End Sub
 
-    Private Sub lblTimer_Click(sender As Object, e As EventArgs) Handles lblTimer.Click
+    Private Sub LblTimer_Click(sender As Object, e As EventArgs) Handles lblTimer.Click
 
     End Sub
 End Class
